@@ -1,5 +1,6 @@
 'use strict';
 
+require('dotenv').config();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { Sequelize, DataTypes } = require('sequelize');
@@ -16,7 +17,7 @@ const DATABASE_CONFIG = {
     }
 }
 
-const sequelize = new Sequelize(DATABASE_URL_TEST, DATABASE_CONFIG);
+const sequelize = new Sequelize(`${DATABASE_URL_TEST}`, DATABASE_CONFIG);
 
 const Users = UsersSchema(sequelize, DataTypes);
 
