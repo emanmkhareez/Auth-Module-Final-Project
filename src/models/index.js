@@ -6,7 +6,7 @@ const Collection = require('./lib/data-collection.js');
 const userModel = require('./users/model.js');
 const noteModel = require('./notes/model.js')
 
-const DATABASE_URL = process.env.DATABASE_URL;
+const DATABASE_URL = process.env.DATABASE_URL || postgres://qiasgnzm:UFYPCL6E_EpC6APTdFAjM4AHbg4amokG@tai.db.elephantsql.com/qiasgnzm;
 
 const DATABASE_CONFIG = {
   dialectOptions: {
