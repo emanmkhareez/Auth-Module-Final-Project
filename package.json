@@ -5,19 +5,19 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/emanmkhareez/hospital-management-system.git"
+    "url": "git+https://github.com/emanmkhareez/Auth-Module-Final-Project.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/emanmkhareez/hospital-management-system/issues"
+    "url": "https://github.com/emanmkhareez/Auth-Module-Final-Project/issues"
   },
-  "homepage": "https://github.com/emanmkhareez/hospital-management-system#readme",
+  "homepage": "https://github.com/emanmkhareez/Auth-Module-Final-Project#readme",
   "dependencies": {
     "base-64": "^1.0.0",
     "bcrypt": "^5.0.1",
