@@ -1,10 +1,18 @@
 "use strict";
 
-module.exports = (User) => async (req, res, next) => {
-  let data = await User.findOne({ where: { username: req.body.username } });
-  if (!data) {
-    req.user = await User.create(req.body);
+const { users } = require('../models');
+
+module.exports = async (req, res, next) => {
+
+  let userRecord = await users.findOne({ where: { username: req.body.username } });
+
+  if (userRecord) { next('Username alerady exists') }
+
+  try {
+    req.user = await users.create(req.body);
     next();
+  } catch (e) {
+    next(e.message)
   }
-    next("username alerady exists");
+
 };
