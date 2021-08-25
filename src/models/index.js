@@ -1,8 +1,7 @@
 require('dotenv').config()
 const{Sequelize,DataTypes}=require('sequelize');
-
-
-const DATABASE_URL = process.env.DATABASE_URL;
+const userModel = require('./users.model.js');
+const POSTGRES_URI = process.env.POSTGRES_URI;
 
 const DATABASE_CONFIG = {
   dialectOptions: {
@@ -13,7 +12,10 @@ const DATABASE_CONFIG = {
   }
 }
 
-const sequelize = new Sequelize(DATABASE_URL, DATABASE_CONFIG);
+const sequelize = new Sequelize(POSTGRES_URI, DATABASE_CONFIG);
+let user = userModel(sequelize, DataTypes);
+
 module.exports={
-    
+    db: sequelize,
+    User: user,
 }
